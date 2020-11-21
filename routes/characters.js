@@ -27,7 +27,7 @@ router.get("/characters", async (req, res) => {
 
     // création de la requete vers l'API Marvel
     const response = await axios.get(
-      `http://gateway.marvel.com/v1/public/characters?ts=${ts}&apikey=${publicKey}&hash=${hash}`
+      `http://gateway.marvel.com/v1/public/characters?limit=100&ts=${ts}&apikey=${publicKey}&hash=${hash}`
     );
     res.json(response.data.data);
   } catch (error) {
