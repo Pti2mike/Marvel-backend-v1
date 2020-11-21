@@ -27,7 +27,7 @@ router.get("/comics", async (req, res) => {
 
     // création de la requete vers l'API Marvel
     const response = await axios.get(
-      `http://gateway.marvel.com/v1/public/comics?ts=${ts}&apikey=${publicKey}&hash=${hash}`
+      `http://gateway.marvel.com/v1/public/comics?ts=${ts}&apikey=${publicKey}&hash=${hash}&limit=100`
     );
     res.json(response.data.data);
   } catch (error) {
